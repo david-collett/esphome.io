@@ -471,6 +471,11 @@ The input and output of your device (`io_capability`) and the pairing mode (`aut
 > Pairing only starts when the client tries to read or write a characteristic that has `read_encrypt: true` or
 > `write_encrypt: true`.
 
+> [!WARNING]
+> `read_encrypt` and `write_encrypt` only require an encrypted connection, and a Just Works pairing gives one. A
+> client that reports no display or input can still pair with Just Works and read or write these characteristics,
+> even when this device uses a passkey or numeric comparison.
+
 ### Examples
 
 A device that uses "Just Works" pairing, without a check by the user:
