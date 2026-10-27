@@ -371,6 +371,10 @@ The input and output of your device (`io_capability`) and the pairing mode (`aut
 > The server requests pairing when a client reads or writes a characteristic that needs encryption. Clients can
 > also start pairing themselves, which the server accepts while pairing is enabled.
 
+The descriptors of a characteristic that needs encryption need the same encryption, except its `description`,
+which clients read while browsing. Subscribing to notifications or indications follows `read_encrypt` and
+`read_encrypt_mitm`, since a subscription delivers the value.
+
 > [!WARNING]
 > `read_encrypt` and `write_encrypt` only require an encrypted connection, and a Just Works pairing gives one. A
 > client that reports no display or input can still pair with Just Works and read or write these characteristics,
