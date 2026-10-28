@@ -372,7 +372,8 @@ The input and output of your device (`io_capability`) and the pairing mode (`aut
 > also start pairing themselves, which the server accepts while pairing is enabled.
 
 The descriptors of a characteristic that needs encryption need the same encryption, except its `description`,
-which clients read while browsing. Subscribing to notifications or indications follows `read_encrypt` and
+which clients read while browsing. Reading a descriptor needs the characteristic's read encryption and writing it
+needs the characteristic's write encryption. Subscribing to notifications or indications follows `read_encrypt` and
 `read_encrypt_mitm`, since a subscription delivers the value.
 
 > [!WARNING]
